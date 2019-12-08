@@ -13,7 +13,14 @@ if (isset($_SESSION['username']) == false) {
 <body>
   <div class="container">
     <label>Category: </label>
-    <input type="text" id="category" class="form-control"><br>
+    <select id="category" class="form-control">
+      <option value="Thể loại 1">Thể loại 1</option>
+      <option value="Thể loại 2">Thể loại 2</option>
+      <option value="Thể loại 3">Thể loại 3</option>
+      <option value="Thể loại 4">Thể loại 4</option>
+      <option value="Thể loại 5">Thể loại 5</option>
+      <option value="Thể loại 6">Thể loại 6</option>
+    </select>
     <label>Title: </label>
     <input type="text" id="title" class="form-control"><br>
     <textarea name='content' id='content' class="form-control ckeditor">
@@ -32,9 +39,11 @@ if (isset($_SESSION['username']) == false) {
 
 <script>
   function createPost() {
+    var e = document.getElementById('category');
+    var category = e.options[e.selectedIndex].value;
+    // console.log(category);
     var content = CKEDITOR.instances.content.getData();
     var title = $('#title').val();
-    var category = $('#category').val();
     if (!content || !title || !category) {
       alert("Invalid post");
     } else {
