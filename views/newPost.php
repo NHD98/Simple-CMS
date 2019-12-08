@@ -2,7 +2,7 @@
 session_start();
 include_once('layouts/header.php');
 include_once('layouts/nav.php');
-var_dump($_SESSION);
+// var_dump($_SESSION);
 if (isset($_SESSION['username']) == false) {
   header("Location: login.php");
 }

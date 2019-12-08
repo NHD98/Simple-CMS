@@ -2,7 +2,7 @@
 include_once('layouts/header.php');
 session_start();
 
-var_dump($_SESSION);
+// var_dump($_SESSION);
 if (isset($_SESSION['username'])){
   header("Location: index.php");
 }
